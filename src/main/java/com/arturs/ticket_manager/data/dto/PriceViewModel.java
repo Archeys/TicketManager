@@ -9,8 +9,10 @@ import java.util.ArrayList;
 @Setter
 public class PriceViewModel {
     private ArrayList<PassengerPricing> passengerPricingList;
+    private double pricingTotal;
 
-    public PriceViewModel(ArrayList<PassengerPricing> passengerPricingList){
+    public PriceViewModel(ArrayList<PassengerPricing> passengerPricingList, double pricingTotal){
         this.passengerPricingList = passengerPricingList;
+        this.pricingTotal = pricingTotal;
     }
 }

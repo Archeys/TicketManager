@@ -39,6 +39,7 @@ public class TicketCalculationServiceImplTest {
         assertEquals(7.26, adultPricing.getBagTotal(), "Adult bag total price should be 7.26");
         assertEquals(6.05, childPricing.getTicketTotal(), "Child ticket price should be 6.05");
         assertEquals(3.63, childPricing.getBagTotal(), "Child bag total price should be 3.63");
+        assertEquals(29.04, priceModel.getPricingTotal(), "Total should be 29.04");
     }
 
 }

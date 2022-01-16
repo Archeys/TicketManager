@@ -20,9 +20,14 @@ public class TicketCalculationServiceImpl implements TicketCalculationService {
         priceRequest.getPassengerList().forEach((passenger) -> {
             double ticketPrice = calculatePassengerTicketPrice(passenger);
             double totalBagPrice = calculatePassengerBagPrice(passenger.getBagCount());
-            fullPricingList.add(new PassengerPricing(passenger.getPassengerType(), passenger.getBagCount(), totalBagPrice, ticketPrice));
+            double amountTotal = ticketPrice + totalBagPrice;
+            fullPricingList.add(new PassengerPricing(passenger.getPassengerType(), passenger.getBagCount(), totalBagPrice, ticketPrice, amountTotal));
         });
-        return new PriceViewModel(fullPricingList);
+
+        //Total saved twice to retain ability to see both individual total and overall
+        double total = fullPricingList.stream().mapToDouble(object -> object.getTotalAmount()).sum();
+
+        return new PriceViewModel(fullPricingList, total);
     }
 
     private double calculatePassengerTicketPrice(Passenger passenger) {
