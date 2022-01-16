@@ -16,7 +16,6 @@ public class Passenger {
 
     @Valid
     @Min(value = 0, message = "The bag amount must be positive")
-    @NotNull(message = "Null values are not allowed for bag count")
     private int bagCount;
 
     public Passenger(PassengerType type, int bagCount) {

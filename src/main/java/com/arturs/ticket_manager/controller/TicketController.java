@@ -22,7 +22,7 @@ public class TicketController {
     }
 
     @PostMapping("/getTicketPricing")
-    public @ResponseBody ResponseEntity getTicketPricing(@RequestBody @Valid PriceRequest request, BindingResult result, HttpServletResponse response) {
+    public @ResponseBody ResponseEntity getTicketPricing(@RequestBody @Valid PriceRequest request) {
         return new ResponseEntity<>(ticketCalculationService.getTicketPricing(request), HttpStatus.OK);
     }
 }
