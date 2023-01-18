@@ -8,7 +8,7 @@ Basic ticket manager API in Java
 
 # API
 - Run aplication by navigating to the root directory and running ```mvn spring-boot:run```
-- API currently houses a single call - domain + /getTicketPricing.
+- API currently houses a single endpoint - domain + /getTicketPricing.
 - By default configured to port 8080 when ran on a local machine. (So - http://localhost:8080/getTicketPricing)
 
 ## Provide data as a JSON object to the API in the following format:
@@ -28,6 +28,6 @@ Basic ticket manager API in Java
 }
 ```
 
-### Contraints
+### Constraints
 - Passenger type must be either "ADULT" or "CHILD"
 - Bag count must not be lower than 0
